@@ -32,3 +32,8 @@ export async function createPost(post) {
     const response = client.from('posts').insert(post).single();
     return response;
 }
+
+export async function getPosts() {
+    const query = client.from('posts').select('*').limit('50');
+    return await query;
+}
