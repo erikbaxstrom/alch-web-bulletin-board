@@ -28,3 +28,8 @@ export async function signOutUser() {
 }
 
 /* Data functions */
+export async function createPost(post) {
+    await console.log(post);
+    // response = query the db
+    // return response;
+}
