@@ -25,23 +25,34 @@
         <!-- css -->
         <link rel="stylesheet" href="/styles/reset.css" />
         <link rel="stylesheet" href="/styles/global.css" />
+        <link rel="stylesheet" href="/styles/form.css" />
         <!-- add link for page specific css -->
     </head>
 
     <body>
         <header class="page-header">
             <img class="logo" src="/assets/html_css_js.png" alt="logo" />
-            <p class="title">Supabase Web App</p>
+            <p class="title">Add Post</p>
             <nav>
-                <a href="/add-post/index.html">Post to Board</a>
+                <a href="/">Home</a>
                 <a id="sign-out-link" href="auth">Sign Out</a>
             </nav>
         </header>
 
         <main>
-            <ul id="cards">
-                <li id="post">post</li>
-            </ul>
+            <form id="add-post-form">
+                <select name="category" id="category-select" required>
+                    <option selected disabled>Select a category...</option>
+                    <option value="services">Services</option>
+                    <option value="housing">Housing</option>
+                    <option value="for-sale">For Sale</option>
+                    <option value="jobs">Jobs</option>
+                </select>
+                <input type="text" placeholder="Title..." required />
+                <textarea type="text" placeholder="Description..." required></textarea>
+                <input type="text" placeholder="Contact Info..." />
+                <button>Post</button>
+            </form>
         </main>
     </body>
 </html>
