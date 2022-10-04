@@ -12,7 +12,7 @@
 
         <!-- js -->
         <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
-        <script type="module" src="app.js"></script>
+        <script type="module" src="./add-post.js"></script>
 
         <!-- fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -48,9 +48,14 @@
                     <option value="for-sale">For Sale</option>
                     <option value="jobs">Jobs</option>
                 </select>
-                <input type="text" placeholder="Title..." required />
-                <textarea type="text" placeholder="Description..." required></textarea>
-                <input type="text" placeholder="Contact Info..." />
+                <input name="title" type="text" placeholder="Title..." required />
+                <textarea
+                    name="description"
+                    type="text"
+                    placeholder="Description..."
+                    required
+                ></textarea>
+                <input name="contact" type="text" placeholder="Contact Info..." />
                 <button>Post</button>
             </form>
         </main>
