@@ -34,6 +34,10 @@ export async function createPost(post) {
 }
 
 export async function getPosts() {
-    const query = client.from('posts').select('*').limit('50');
+    const query = client
+        .from('posts')
+        .select('*')
+        .limit('50')
+        .order('created_at', { ascending: false });
     return await query;
 }

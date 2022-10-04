@@ -32,9 +32,7 @@ function displayError() {
 
 function displayPosts() {
     for (let post of posts) {
-        renderPost(post);
-        // const postEl = renderPost(post);
-        // postList.append(postEl);
-        // console.log(postList);
+        const postEl = renderPost(post);
+        board.append(postEl);
     }
 }
