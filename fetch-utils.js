@@ -29,7 +29,7 @@ export async function signOutUser() {
 
 /* Data functions */
 export async function createPost(post) {
-    await console.log(post);
-    // response = query the db
-    // return response;
+    // await console.log(post);
+    const response = client.from('posts').insert(post).single();
+    return response;
 }
