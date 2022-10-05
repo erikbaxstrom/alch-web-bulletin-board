@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- metadata -->
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+        <!-- title and favicon -->
+        <title>Bulletin Board</title>
+        <link rel="icon" type="image/x-icon" href="/assets/alchemy-favicon.png" />
+
+        <!-- js -->
+        <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+        <script type="module" src="./add-post.js"></script>
+
+        <!-- fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;600&family=Titillium+Web:wght@200;400;600&display=swap"
+        />
+
+        <!-- css -->
+        <link rel="stylesheet" href="/styles/reset.css" />
+        <link rel="stylesheet" href="/styles/global.css" />
+        <link rel="stylesheet" href="/styles/form.css" />
+        <!-- add link for page specific css -->
+    </head>
+
+    <body>
+        <header class="page-header">
+            <img class="logo" src="/assets/html_css_js.png" alt="logo" />
+            <p class="title">Add Post</p>
+            <nav>
+                <a href="/">Home</a>
+                <a id="sign-out-link" href="auth">Sign Out</a>
+            </nav>
+        </header>
+
+        <main>
+            <form id="add-post-form">
+                <select name="category" id="category-select" required>
+                    <option disabled selected value="">Select a category...</option>
+                    <option value="services">Services</option>
+                    <option value="housing">Housing</option>
+                    <option value="for-sale">For Sale</option>
+                    <option value="jobs">Jobs</option>
+                </select>
+                <input name="title" type="text" placeholder="Title..." required />
+                <textarea
+                    name="description"
+                    type="text"
+                    placeholder="Description..."
+                    required
+                ></textarea>
+                <input name="contact" type="text" placeholder="Contact Info..." />
+                <button>Post</button>
+            </form>
+            <div id="error-display"></div>
+        </main>
+    </body>
+</html>

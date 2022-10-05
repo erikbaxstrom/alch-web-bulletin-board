@@ -1,5 +1,6 @@
-const SUPABASE_URL = '';
-const SUPABASE_KEY = '';
+const SUPABASE_URL = 'https://vhggynhjqqqtwnroniln.supabase.co';
+const SUPABASE_KEY =
+    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZoZ2d5bmhqcXFxdHducm9uaWxuIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NjQ4NDQyMTYsImV4cCI6MTk4MDQyMDIxNn0.LywedVmTirq5Yt63NAh6Y7aUjEb_3Q4tzwYTQAl2Nu8';
 const client = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
 /* Auth related functions */
@@ -27,3 +28,16 @@ export async function signOutUser() {
 }
 
 /* Data functions */
+export async function createPost(post) {
+    const response = client.from('posts').insert(post).single();
+    return response;
+}
+
+export async function getPosts() {
+    const query = client
+        .from('posts')
+        .select('*')
+        .limit('50')
+        .order('created_at', { ascending: false });
+    return await query;
+}
